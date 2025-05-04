@@ -22,4 +22,16 @@ app.get("/posts/:id", (c) => {
 app.post("/posts", (c) => c.text("Created!", 201));
 app.delete("/posts/:id", (c) => c.text(`${c.req.param("id")} is deleted!`));
 
+app.get("/page", (c) => c.html(<View />));
+
+const View = () => {
+  return (
+    <html>
+      <body>
+        <h1>hello hono html!</h1>
+      </body>
+    </html>
+  );
+};
+
 export default app;
